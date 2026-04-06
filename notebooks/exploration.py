@@ -53,3 +53,10 @@ print("\n" + "=" * 50)
 print("Exploration terminée !")
 print("Prochain lab : entraîner un modèle ML")
 print("=" * 50)
+# ===== REPARTITION PAR SEXE ET DIAGNOSTIC =====
+print(f"\n--- Repartition par sexe et diagnostic ---")
+
+sex_diag_counts = df.groupby(["sexe", "diagnostic"]).size()
+
+for (sexe, diag), count in sex_diag_counts.items():
+    print(f"{sexe} - {diag} : {count} patients")
